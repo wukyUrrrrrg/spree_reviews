@@ -1,0 +1,14 @@
+<div class="review">
+  <span title="<%= txt_stars(review.rating) %>">
+    <%= render :partial => "reviews/stars", :locals => {:stars => review.rating} %>
+  </span>
+  &nbsp; <span class="title"><%= review.title %> </span>
+  <br/>
+  <em><span class="attribution"><%= "<strong>#{review.name}</strong> - ".html_safe if review.name%><noindex><%= t('submitted_on') %> <%= l review.created_at.to_date %></noindex></span></em>
+  <p>
+  <%= review.review.html_safe %>
+  </p>
+  <div id="feedback_review_<%= review.id %>">
+    <%= render :partial => "feedback_reviews/form", :locals => {:review => review} %>
+  </div>
+</div>

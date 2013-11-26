@@ -1,0 +1,64 @@
+<% content_for :head do %>
+  <%= javascript_include_tag :ckeditor %>
+<% end %>
+<!-- <h1>Product review submission</h1> -->
+
+<h2> <%= I18n.t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
+
+<%= form_for @review, :url => {:action => 'create'} do |f| %>
+<%= render "shared/error_messages", :target => @review %>
+<%= f.hidden_field :product_id, :value => @product.id %>
+
+<table cellspacing="0" cellpadding="2">
+  <tbody>
+    <tr valign="top">
+      <td class="fieldtitle right nowrap">
+	<%= f.label :name, "<strong>#{ I18n.t('reviews.your_name')}</strong>".html_safe %>
+      </td>
+      <td width="100%">
+	<%= f.text_field :name, :size => 50, :maxlength => 100, :class => 'required', :value => (params[:review][:name] if params[:review]) || @name %><span class="req">*</span>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td class="fieldtitle right nowrap">
+	<%= f.label :email, "<strong>#{ I18n.t('reviews.your_email')}</strong>".html_safe %>
+      </td>
+      <td width="100%">
+	<%= f.text_field :email, :size => 50, :maxlength => 100, :class => 'required', :value => (params[:review][:email] if params[:review]) || @email %><span class="req">*</span>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="padding-top: 5px; padding-bottom: 5px;" class="fieldtitle right nowrap">
+    	<strong><%= I18n.t('rating') %></strong>
+      </td>
+      <td style="padding-top: 5px; padding-bottom: 5px;">
+        <span class="req">*</span><%= render :partial => "reviews/stars", :locals => {:stars => @review.rating, :edit_enabled => true} %>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td class="fieldtitle right nowrap">
+    	<%= f.label :title, raw("<strong>#{ I18n.t('review_title')}</strong>") %>
+      </td>
+      <td>
+        <%= f.text_field :title, :maxlength => "255", :size => "50", :class => 'required' %>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td class="fieldtitle right nowrap">
+    	<%= f.label :review, raw("<strong>#{ I18n.t('review_content')}</strong>") %>
+      </td>
+      <td>
+	<span class="req">*</span>
+    	<%= f.cktext_area :review, :toolbar=>'Basic', :wrap => "virtual", :rows => "10", :cols => "50" %>
+      </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td style="padding-top: 5px;">
+    	<%= f.submit I18n.t('submit_your_review'), :class => "button bg_darkfirst".html_safe %>
+      </td>
+    </tr>
+  </tbody></table>
+<% end %>
+
+<%= render :partial => "fine_print" %>

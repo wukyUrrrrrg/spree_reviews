@@ -1,0 +1,64 @@
+ru-RU:
+  write_your_own_review: Оставить отзыв
+  review_management: Администрирование отзывов
+  review_management_description: Администрирование созданных пользователями отзывов
+  back_reviews: Назад к отзывам
+  are_you_sure_review: Вы уверены, что хотите удалить отзыв?
+  info_approve_review: Отзыв одобрен
+  error_approve_review: Ошибки при одобрении отзыва
+  approve: Одобрить
+  leave_us_a_review_for: Оставьте свой отзыв -
+  review_successfully_submitted: Ваш отзыв успешно создан
+  rating: Оценка
+  submit_your_review: Отправить отзыв
+  review_content: Отзыв
+  review_title: Заголовок
+  reviews:
+    review_settings: Настройки отызвов
+    manage_review_settings: Настроить отображение отзывов
+    preview_size: Размер сниппета
+    include_unapproved: Показывать неободренные еще отзывы
+    your_name: Ваше имя
+    your_location: Город
+    your_email: Email
+  average_customer_rating: Средняя оценка
+  the_fine_print: The fine print
+  terms_text: All opinions must comply with our terms and conditions
+  approved_text: Unlocked comments will be published within 1-2 business days.
+  guideline_text: We reserve the right not to post opinions unrelated to your product
+  "terms and conditions": Terms & Conditions
+  "review guidelines": Review Guidelines
+  date_: Дата
+  for: для
+  Unapproved_reviews: Unapproved
+  Approved_reviews: Approved
+  from: from
+  by: by
+  submitted_on: ""
+  based_upon: based upon
+  review:
+    one: one review
+    other: "%{count} reviews"
+  star:
+    one: "1"
+    other: "%{count}"
+  voice:
+    one: "1 voice"
+    other: "%{count} voices"
+
+  feedback: Полезность
+  stars: Stars
+  feedback_review_for: "Review: '%{review}'"
+  out_of_5: "out of 5"
+  was_this_review_helpful: "Was this review helpful to you?"
+  you_must_enter_value_for_rating: "You must enter a value for rating."
+  you_need_to_rate_your_review: Необходимо дать оценку по 5-бальной шкале
+  your_review_is_spam: К сожалению ваш отзыв расценен как спам! Попробуйте убрать ссылки на другие сайты из отзыва.
+
+  activerecord:
+    attributes:
+      review:
+        name: Имя
+        title: Заголовок
+        review: Отзыв
+        rating: Оценка

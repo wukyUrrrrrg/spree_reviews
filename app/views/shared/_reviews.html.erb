@@ -1,0 +1,9 @@
+<div id="reviews">
+  <%= render :partial => 'shared/rating', :locals => {:product => @product} %>
+  <% for review in @product.reviews.approval_filter %>
+    <%= render :partial => 'shared/review', :locals => {:review => review} %>
+  <% end %>
+
+  <%= link_to t('write_your_own_review'), new_product_review_path(@product), :class => "button" %>
+</div>
+
